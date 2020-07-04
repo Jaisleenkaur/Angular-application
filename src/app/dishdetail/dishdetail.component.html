@@ -43,6 +43,9 @@ fxLayput.xs="0">
     <mat-list>
       <mat-list-item *ngFor="let comment of dish.comments">
         <p matLine>
+          <span> {{comment.comment}} </span>
+        </p>
+        <p matLine>
           <span> {{comment.rating}} Stars</span>
         </p>
         <p matLine>
