@@ -6,7 +6,7 @@ import { Dish } from '../shared/dish';
 import { switchMap } from 'rxjs/operators';
 import {FormBuilder , FormGroup , Validators} from '@angular/forms';
 import {Comment} from '../shared/comment';
-import { visibility, flyInOut } from '../animations/app.animation';
+import { visibility, flyInOut, expand } from '../animations/app.animation';
 
 @Component({
   selector: 'app-dishdetail',
@@ -18,7 +18,8 @@ import { visibility, flyInOut } from '../animations/app.animation';
     },
     animations: [
       visibility(),
-      flyInOut()
+      flyInOut(),
+      expand()
     ]
   })
 export class DishdetailComponent implements OnInit {
@@ -54,7 +55,7 @@ export class DishdetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private fb: FormBuilder ,
-    @Inject('BaseURL') private BaseURL) { 
+    @Inject('baseURL') private baseURL) { 
       this.createForm();
     }
 
